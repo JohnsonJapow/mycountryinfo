@@ -2,9 +2,8 @@
   "name": "country-info-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "backend/server.js",
+  "main": "server.js",
   "scripts": {
-    "postinstall": "cd frontend && npm install",
     "start": "npx concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "start:backend": "node backend/server.js",
     "start:frontend": "cd frontend && npm start"
