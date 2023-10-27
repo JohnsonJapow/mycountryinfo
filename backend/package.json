@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "cd frontend && npm install",
     "start": "npx concurrently \"npm run start:backend\" \"npm run start:frontend\"",
-    "start:backend": "cd backend && node server.js",
+    "start:backend": "node backend/server.js",
     "start:frontend": "cd frontend && npm start"
   },
   "keywords": [],
