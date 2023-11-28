@@ -13,11 +13,11 @@ function MainSearching(){
         try {
         const response = await fetch(`/api/country/${country}`);
         const data = await response.json();
-
+        console.log(data);
         if (data.error) {
             setError(data.error);
         } else {
-            setCountryInfo(data);
+            setCountryInfo(data[0]);
         }
         } catch (err) {
         setError("Failed to fetch data. Please try again.");
@@ -60,7 +60,7 @@ function MainSearching(){
                     <p>Population: {countryInfo.population?.toLocaleString() ?? 'N/A'}</p>
                     <p>Area: {countryInfo.area?.toLocaleString() ?? 'N/A'} sq km</p>
                     <p>Region: {countryInfo.region}, {countryInfo.subregion}</p>
-                    <p>Continent:{countryInfo.continents?.join(', ') ?? 'N/A'}</p>
+                    <p>Continent: {countryInfo.continents?.join(', ') ?? 'N/A'}</p>
                     <img src={countryInfo.flags?.png} alt="Country Flag" />
                     <img src={countryInfo.coatOfArms?.svg} alt="Country Coat of Arms" style={{ width: '100px' }} />
                 </div>

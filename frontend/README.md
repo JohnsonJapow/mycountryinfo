@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Country Info App
 
-## Available Scripts
+The Country Info App allows users to search for a country and retrieve relevant details, such as the country's name, capital, currency, population, area, region, and flags. The app uses the `restcountries.com` API to fetch this information.
 
-In the project directory, you can run:
+The app uses the restcountries.com API to retrieve this information.
 
-### `npm start`
+#Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Search by Country**: Easily find information about any country.
+- **Detailed Information**: View details like the official name, capital, currency, population, and more.
+- **Interactive UI**: Enjoy smooth hover effects on the search box and other interactive elements.
+- **Error Handling**: Gracefully handles errors with relevant user messages.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#Getting Started
 
-### `npm test`
+##Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Node.js
+npm
+git
 
-### `npm run build`
+##Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.Clone the repo to the desired folder:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+open the cli on the desired folder
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+cmd:git clone https://github.com/JohnsonJapow/mycountryinfo.git
 
-### `npm run eject`
+2.Navigate to the project directory:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+cmd:cd mycountryinfo/backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.Install NPM packages:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+cmd:npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4.Start the development server:
 
-## Learn More
+cmd:npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5.Access the app in your browser at `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Using the API
 
-### Code Splitting
+The app fetches country data from an external API `https://restcountries.com/#rest-countries`. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+If you face any issues, ensure the API endpoint is accessible and working.
 
-### Analyzing the Bundle Size
+Deployment 🌐
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To deploy this app to Heroku, follow these steps:
 
-### Making a Progressive Web App
+Create a Heroku account if you don't have one and log in.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Install the Heroku CLI on your machine.
 
-### Advanced Configuration
+Log in to Heroku through the CLI using heroku login.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Navigate to your project directory.
 
-### Deployment
+Initialize a git repository if not already done using git init.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Connect your repository to Heroku using heroku git:remote -a [your-heroku-app-name].
 
-### `npm run build` fails to minify
+Commit your changes using git add . and git commit -am "Initial commit".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Push your code to Heroku using git push heroku master.
+
+Access your deployed app by navigating to https://[your-heroku-app-name].herokuapp.com in your browser.
+
+*Replace [your-heroku-app-name] with the actual name of your Heroku app.
+
+Built With 🛠️
+React - Frontend library
+Express - Backend framework
+Axios - HTTP client
+
+- **Search by Country**: Easily find information about any country.
+- **Detailed Information**: View details like the official name, capital, currency, population, and more.
+- **Interactive UI**: Enjoy smooth hover effects on the search box and other interactive elements.
+- **Error Handling**: Gracefully handles errors with relevant user messages.
+
+## Running Tests
+
+To ensure the quality and functionality of the application, a suite of automated tests has been provided. Follow the steps below to run these tests:
+
+Backend Tests with Jest:
+
+Navigate to the backend directory, run cd mycountryinfo/backend
+
+Run the test suite with, run npm test
+
+
+Frontend Tests with Cypress:
+
+1.Ensure the backend server is running (in another terminal window, run cd mycountryinfo/backend && npm start).
+
+2.Navigate to the frontend directory: cd ../frontend from the backend directory
+
+3.Open the Cypress test runner with npx cypress open.
+
+4.In the Cypress UI, click on 'E2E Testing'.
+
+5.Choose the browser for testing and click 'Start E2E Testing'.
+
+6.Select the test file .cy.js to run the specific tests.

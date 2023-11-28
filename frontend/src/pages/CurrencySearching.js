@@ -105,7 +105,7 @@ function CurrencySearching(){
                         <p>Population: {selectedCountry.population?.toLocaleString() ?? 'N/A'}</p>
                         <p>Area: {selectedCountry.area?.toLocaleString() ?? 'N/A'} sq km</p>
                         <p>Region: {selectedCountry.region}, {selectedCountry.subregion}</p>
-                        <p>Continent:{selectedCountry.continents?.join(', ') ?? 'N/A'}</p>
+                        <p>Continent: {selectedCountry.continents?.join(', ') ?? 'N/A'}</p>
                         <img src={selectedCountry.flags?.png} alt="Country Flag" />
                         <img src={selectedCountry.coatOfArms?.svg} alt="Country Coat of Arms" style={{ width: '100px' }} />
                     </div>
