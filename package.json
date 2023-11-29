@@ -4,10 +4,10 @@
   "description": "",
   "main": "backend/server.js",
   "scripts": {
-    "postinstall": "cd ../frontend && npm install",
+    "postinstall": "cd frontend && npm install",
     "start": "npx concurrently \"npm run start:backend\" \"npm run start:frontend\"",
-    "start:backend": "cd ../backend && node server.js",
-    "start:frontend": "cd ../frontend && npm start",
+    "start:backend": "cd backend && node server.js",
+    "start:frontend": "cd frontend && npm start",
     "test": "jest"
   },
   "keywords": [],
