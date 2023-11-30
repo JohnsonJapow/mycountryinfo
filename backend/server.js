@@ -9,17 +9,7 @@ app.use((req, res, next) => {
     res.set('Cache-Control', 'no-store');
     next();
 });
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../frontend/build')));
-// The "catchall" handler for any request that doesn't match one above
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname,'../frontend/build/index.html'));
-  });
-if (process.env.NODE_ENV !== 'test') {
-    app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
-    });
-}
+
 app.get('/api/all-currencies', async (req,res)=>{
     console.log("Fetching all currencies");
     try{
@@ -104,5 +94,15 @@ app.get('/api/region/:region', async (req, res) => {
         }
     }
 });
-
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+// The "catchall" handler for any request that doesn't match one above
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname,'../frontend/build/index.html'));
+  });
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+    });
+}
 module.exports = app; // At the bottom of your app.js file
