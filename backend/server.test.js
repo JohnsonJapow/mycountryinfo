@@ -1,9 +1,9 @@
-const request = require('supertest');
-const express = require('express');
-const axios = require('axios');
+import request from 'supertest';
+import axios from 'axios';
 jest.mock('axios');
 
-const app = require('./server');
+import app from './server';
+
 
 describe('API endpoints', () => {
   describe('/api/all-currencies', () => {
@@ -314,6 +314,4 @@ describe('API endpoints', () => {
   });
   
 });
-
-
-module.exports = app;
+export default app;
