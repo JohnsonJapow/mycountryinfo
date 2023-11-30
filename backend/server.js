@@ -1,6 +1,7 @@
 import express from 'express';
 import axios from 'axios';
 import path from 'path';
+import { fileURLToPath } from 'url';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -94,6 +95,10 @@ app.get('/api/region/:region', async (req, res) => {
         }
     }
 });
+
+// Convert the URL to a file path
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 // The "catchall" handler for any request that doesn't match one above
