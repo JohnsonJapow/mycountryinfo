@@ -1,8 +1,9 @@
-import request from 'supertest';
-import axios from 'axios';
-jest.mock('axios');
+const request = require('supertest');
+const express = require('express');
+const axios = require('axios');
+const app = require('./server');
 
-import app from './server';
+jest.mock('axios');
 
 
 describe('API endpoints', () => {
@@ -314,4 +315,4 @@ describe('API endpoints', () => {
   });
   
 });
-export default app;
+module.exports = app;

@@ -1,10 +1,12 @@
-import express from 'express';
-import axios from 'axios';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const express = require('express');
+const axios = require('axios');
+const path = require('path');
+const dotenv = require('dotenv');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+dotenv.config();
+console.log(process.env.NODE_ENV);
 // Middleware to set Cache-Control header
 app.use((req, res, next) => {
     res.set('Cache-Control', 'no-store');
@@ -34,7 +36,7 @@ app.get('/api/all-currencies', async (req,res)=>{
         res.json(allCurrencies);
         } catch (error) {
             if (error.response) {
-                console.error("External API error:", error.message);
+                console.error("External API error:",  error.response.data || error.response.statusText || error.message);
                 res.status(error.response.status).json({ error: "External API error." });
             } else {
                 console.error("Internal Server Error:", error.message);
@@ -52,7 +54,7 @@ app.get('/api/country/:name', async (req, res) => {
         res.json(response.data);
     } catch (error) {
         if (error.response) {
-            console.error("External API error:", error.message);
+            console.error("External API error:",  error.response.data || error.response.statusText || error.message);
             res.status(error.response.status).json({ error: "External API error." });
         } else {
             console.error("Error fetching country:", error.message);
@@ -69,7 +71,7 @@ app.get('/api/currency/:currency', async (req, res)=>{
         res.json(allCountriesUsingTheCurrency.data);
     } catch (error) {
         if (error.response) {
-            console.error("External API error:", error.message);
+            console.error("External API error:",  error.response.data || error.response.statusText || error.message);
             res.status(error.response.status).json({ error: "External API error." });
         } else {
             console.error("Internal Server Error:", error.message);
@@ -87,7 +89,7 @@ app.get('/api/region/:region', async (req, res) => {
         res.json(allCountriesResponse.data);
     } catch (error) {
         if (error.response) {
-            console.error("External API error:", error.message);
+            console.error("External API error:",  error.response.data || error.response.statusText || error.message);
             res.status(error.response.status).json({ error: "External API error." });
         } else {
             console.error("Internal Server Error:", error.message);
@@ -96,18 +98,16 @@ app.get('/api/region/:region', async (req, res) => {
     }
 });
 
-// Convert the URL to a file path
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 // The "catchall" handler for any request that doesn't match one above
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname,'../frontend/build/index.html'));
   });
+
 if (process.env.NODE_ENV !== 'test') {
     app.listen(PORT, () => {
         console.log(`Server is running on http://localhost:${PORT}`);
     });
 }
-export default app;
+module.exports = app;
