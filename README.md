@@ -31,7 +31,7 @@ cmd:git clone https://github.com/JohnsonJapow/mycountryinfo.git
 
 2.Navigate to the project directory:
 
-cmd:cd mycountryinfo/backend
+cmd:cd mycountryinfo
 
 3.Install NPM packages:
 
