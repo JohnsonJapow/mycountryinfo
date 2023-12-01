@@ -41,7 +41,7 @@ cmd:npm install
 
 cmd:npm start
 
-5.Access the app in your browser at `http://localhost:3000`.
+5.Access the app in your browser at `http://localhost:5000`.
 
 Using the API
 
@@ -89,14 +89,16 @@ To ensure the quality and functionality of the application, a suite of automated
 
 Backend Tests with Jest:
 
-Navigate to the backend directory, run cd mycountryinfo/backend
+Firstly, open the .env in root directory, then modify NODE_ENV value to test
+
+Navigate to the root directory
 
 Run the test suite with, run npm test
 
 
 Frontend Tests with Cypress:
 
-1.Ensure the backend server is running (in another terminal window, run cd mycountryinfo/backend && npm start).
+1.Ensure the backend server is running (in another terminal window, run npm start in the root directory).
 
 2.Navigate to the frontend directory: cd ../frontend from the backend directory
 
