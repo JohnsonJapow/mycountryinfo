@@ -8,6 +8,14 @@ The Country Info App allows users to search for a country and retrieve relevant 
 
 The app uses the restcountries.com API to retrieve this information.
 
+#Functions
+- **Search by Country**:
+![image](https://github.com/JohnsonJapow/mycountryinfo/assets/118543930/b6530078-58b2-46b5-8fbe-23668c7957b3)
+- **Search by Region**:
+![image](https://github.com/JohnsonJapow/mycountryinfo/assets/118543930/418aa54b-90f5-47dc-95bd-606eb544a807)
+- **Search by Currency**:
+![image](https://github.com/JohnsonJapow/mycountryinfo/assets/118543930/0a88e4c0-d962-4b75-8b1a-a1bbd9c796f5)
+
 #Features
 
 - **Search by Country**: Easily find information about any country.
